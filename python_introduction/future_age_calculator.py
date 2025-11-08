@@ -1,4 +1,4 @@
-print("how old are you?")
+print("How old are you?")
 current_age = 30
 print(current_age)
 in_2050 = current_age + 27
