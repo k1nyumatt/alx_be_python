@@ -1,53 +1,40 @@
-# Shopping List Manager
-
 def display_menu():
-    """Display the shopping list menu options"""
-    print("\nShopping List Manager")
+    print("Shopping List Manager")
     print("1. Add item")
     print("2. Remove item")
     print("3. View list")
     print("4. Exit")
 
-# Initialize the shopping list array
 shopping_list = []
 
-# Main program loop
 while True:
-    # Call display_menu function
     display_menu()
+    choice = int(input("Enter your choice: "))
     
-    # Get user choice as a number
-    choice = int(input("Enter your choice (1-4): "))
-    
-    # Option 1: Add an item
     if choice == 1:
-        item = input("Enter the item to add: ")
+        item = input("Enter the item name: ")
         shopping_list.append(item)
-        print(f"'{item}' has been added to the list.")
+        print(f"{item} has been added to the shopping list.")
     
-    # Option 2: Remove an item
     elif choice == 2:
-        item = input("Enter the item to remove: ")
+        item = input("Enter the item name: ")
         if item in shopping_list:
             shopping_list.remove(item)
-            print(f"'{item}' has been removed from the list.")
+            print(f"{item} has been removed from the shopping list.")
         else:
-            print(f"'{item}' not found in the list.")
+            print(f"{item} not found in the shopping list.")
     
-    # Option 3: View the list
     elif choice == 3:
-        if shopping_list:
-            print("\nYour Shopping List:")
-            for index, item in enumerate(shopping_list, start=1):
-                print(f"{index}. {item}")
+        print("Shopping List:")
+        if len(shopping_list) == 0:
+            print("The shopping list is empty.")
         else:
-            print("Your shopping list is empty.")
+            for item in shopping_list:
+                print(f"- {item}")
     
-    # Option 4: Exit
     elif choice == 4:
-        print("Goodbye! Happy shopping!")
+        print("Goodbye!")
         break
     
-    # Handle invalid choices
     else:
-        print("Invalid choice. Please enter a number between 1 and 4.")
+        print("Invalid choice. Please try again.")
