@@ -9,7 +9,11 @@ shopping_list = []
 
 while True:
     display_menu()
-    choice = int(input("Enter your choice: "))
+    try:
+        choice = int(input("Enter your choice: "))
+    except ValueError:
+        print("Invalid choice. Please try again.")
+        continue
     
     if choice == 1:
         item = input("Enter the item name: ")
