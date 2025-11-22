@@ -1,16 +1,20 @@
 # Shopping List Manager
 
+# Function to display the menu
+def display_menu():
+    print("\nShopping List Manager")
+    print("1. Add item")
+    print("2. Remove item")
+    print("3. View list")
+    print("4. Exit")
+
 # Start with an empty shopping list
 shopping_list = []
 
 # Main loop - keeps running until user exits
 while True:
     # Display the menu
-    print("\nShopping List Manager")
-    print("1. Add item")
-    print("2. Remove item")
-    print("3. View list")
-    print("4. Exit")
+    display_menu()
     
     # Get user's choice
     choice = input("Enter your choice (1-4): ")
