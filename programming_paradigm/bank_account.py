@@ -33,10 +33,8 @@ class BankAccount:
             bool: True if withdrawal successful, False otherwise
         """
         if amount > self.account_balance:
-            print("Insufficient funds.")
             return False
         elif amount <= 0:
-            print("Withdrawal amount must be positive.")
             return False
         else:
             self.account_balance -= amount
