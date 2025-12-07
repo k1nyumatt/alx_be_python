@@ -20,7 +20,7 @@ class Book:
     
     def __str__(self):
         """Return string representation of the book."""
-        return f"Book: '{self.title}' by {self.author}"
+        return f"Book: {self.title} by {self.author}"
 
 
 class EBook(Book):
@@ -47,7 +47,7 @@ class EBook(Book):
     
     def __str__(self):
         """Return string representation of the ebook."""
-        return f"EBook: '{self.title}' by {self.author}, File Size: {self.file_size}KB"
+        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
 
 
 class PrintBook(Book):
@@ -74,7 +74,7 @@ class PrintBook(Book):
     
     def __str__(self):
         """Return string representation of the print book."""
-        return f"PrintBook: '{self.title}' by {self.author}, Pages: {self.page_count}"
+        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
 
 
 class Library:
@@ -97,18 +97,11 @@ class Library:
             book (Book): An instance of Book, EBook, or PrintBook
         """
         self.books.append(book)
-        print(f"Added: {book}")
     
     def list_books(self):
         """Print details of all books in the library."""
-        if not self.books:
-            print("The library is empty.")
-            return
-        
-        print(f"\nLibrary Collection ({len(self.books)} book(s)):")
-        print("-" * 60)
-        for i, book in enumerate(self.books, 1):
-            print(f"{i}. {book}")
+        for book in self.books:
+            print(book)
 
 
 # Example usage
